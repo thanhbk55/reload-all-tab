@@ -10,6 +10,15 @@
   "browser_action": {
     "default_title": "Reload all activate tab"
   },
+  "commands": {
+    "reload-command": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "Command+Shift+X"
+      },
+      "description": "Reload command"
+    }
+  },
   "manifest_version": 2,
   "permissions": [
     "tabs"

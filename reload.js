@@ -1,4 +1,4 @@
-chrome.browserAction.onClicked.addListener((tab) => {
+function reload(){
   chrome.windows.getAll({populate:true}, (windows) => {
     windows.forEach((window) => {
       window.tabs.forEach((tab) => {
@@ -6,4 +6,14 @@ chrome.browserAction.onClicked.addListener((tab) => {
       })
     })
   })
+}
+
+chrome.browserAction.onClicked.addListener(() => {
+  reload()
+})
+
+chrome.commands.onCommand.addListener((command) => {
+  if(command === "reload-command"){
+    reload()
+  }
 })
